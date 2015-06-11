@@ -7,8 +7,17 @@ public class Hall {
     public Hall() {
         for (int i = 0; i < rails.length; i++) {
             rails[i] = new Rail();
-
         }
     }
 
+    public boolean isEmpty() {
+        for (Rail rail : rails) {
+            for (ClothesItem clothesItem : rail.clothesItems) {
+                if (clothesItem != null) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
