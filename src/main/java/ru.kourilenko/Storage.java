@@ -13,9 +13,7 @@ public class Storage {
         if (free==MAX_CLOTHES){
             MAX_CLOTHES = MAX_CLOTHES+10;
             ClothesItem[] newClothesItems = new ClothesItem[MAX_CLOTHES];
-            for (int i = 0; i < clothesItems.length; i++){
-                newClothesItems[i] = clothesItems[i];
-            }
+            System.arraycopy(clothesItems, 0, newClothesItems, 0, clothesItems.length);
             clothesItems = newClothesItems;
         }
         clothesItems[free] = clothesItem;
